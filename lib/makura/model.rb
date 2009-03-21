@@ -345,7 +345,7 @@ module Makura
 
       def view(name, opts = {})
         flat = opts.delete(:flat)
-        hash = database.view("#{self}/#{name}", opts)
+        hash = database.view("#{self}/_view/#{name}", opts)
 
         convert_raw(hash['rows'], flat)
       end
